@@ -1,2 +1,4 @@
+## Data Transformations with BigQuery and DBT 
+Find the associated post here: [Data Transformations with BigQuery and DBT](https://brandon-setegn.github.io/posts/BigQuery-with-DBT/)
 ### DBT Project
-Checkout the `dbt-project` folder to see details for this repo.
+Look at the `dbt-project` folder to see details for this repo.
