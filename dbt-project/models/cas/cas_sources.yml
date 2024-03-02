@@ -1,0 +1,8 @@
+
+sources:
+  - name: cas_loanperf # This bigquery dataset the source is in
+    # database: raw # This is the bigquery project
+    # schema: jaffle_shop # This bigquery dataset the source is in
+    tables:
+      - name: cas_2022_r01_g1
+      

@@ -33,5 +33,5 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   cas_loan_perf:
     # Config indicated by + and applies to all files under models/example/
-    example:
+    cas:
       +materialized: view
