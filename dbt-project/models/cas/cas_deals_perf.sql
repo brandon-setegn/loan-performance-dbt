@@ -4,6 +4,7 @@
 {{ config(materialized = 'table')}}
 SELECT
   reporting_period,
+  SUM(current_actual_upb) as current_actual_upb,
   SUM(unscheduled_principal_current) / SUM(scheduled_ending_balance) AS smm,
   (1 - POW(
     (1 - (SUM(unscheduled_principal_current) / SUM(scheduled_ending_balance)))
