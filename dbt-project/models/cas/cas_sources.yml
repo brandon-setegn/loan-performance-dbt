@@ -4,7 +4,7 @@ sources:
     # database: raw # This is the bigquery project
     # schema: jaffle_shop # This bigquery dataset the source is in
     tables:
-      - name: cas_2022_r01_g1
+      - name: cas_deals
         columns:
           - name: reference_pool_id
           - name: loan_identifier

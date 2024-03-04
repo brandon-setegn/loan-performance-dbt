@@ -12,7 +12,7 @@ WITH with_period AS (
         ,CAST(current_loan_delinquency_status AS INT64) as current_loan_delinquency_status
         ,* EXCEPT(current_loan_delinquency_status)
     FROM
-        {{ source('cas_loanperf', 'cas_2022_r01_g1')}}
+        {{ source('cas_loanperf', 'cas_deals')}}
 )
 SELECT
     reporting_period
