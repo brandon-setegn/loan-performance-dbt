@@ -1,9 +1,6 @@
 /*
- Welcome to your first dbt model!
- Did you know that you can also configure models directly within SQL files?
- This will override configurations stated in dbt_project.yml
- 
- Try changing "table" to "view" below
+ This view creates an 'all_deals' deal_name with a set of all records and unions it with existing deals.
+ This 'all_deals' allows us to aggregate all deals in the cas_deals_perf model.
  */
 {{ config(materialized = 'view')}}
 
@@ -15,7 +12,7 @@ FROM
 
 UNION ALL
 
--- Move deal_name to the end of the table
+-- Move deal_name to the end of the table so columns are aligned for union
 SELECT
     * EXCEPT(deal_name)
     ,deal_name

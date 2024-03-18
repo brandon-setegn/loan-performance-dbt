@@ -1,9 +1,5 @@
 /*
- Welcome to your first dbt model!
- Did you know that you can also configure models directly within SQL files?
- This will override configurations stated in dbt_project.yml
- 
- Try changing "table" to "view" below
+ This model creates a 'clean' version of the cas_deals table with some calculated and cumulative fields.
  */
 {{ config(materialized = 'view')}}
 WITH with_period AS (
@@ -16,7 +12,9 @@ WITH with_period AS (
 )
 SELECT
     reporting_period
+    -- Scheduled Ending Balance is needed for SMM and thus CPR calculations
     ,current_actual_upb + unscheduled_principal_current AS scheduled_ending_balance
+    -- Add Some Cumulative Fields
     ,SUM(unscheduled_principal_current) OVER (PARTITION BY loan_identifier ORDER BY reporting_period
         ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
     ) AS unscheduled_principal_cumulative

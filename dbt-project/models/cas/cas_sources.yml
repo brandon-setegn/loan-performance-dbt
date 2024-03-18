@@ -6,6 +6,7 @@ sources:
     tables:
       - name: cas_deals
         columns:
+        # Not all columns need to be defined here, but it's a good idea to define the ones you'll be using
           - name: reference_pool_id
           - name: loan_identifier
           - name: monthly_reporting_period
